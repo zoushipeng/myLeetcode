@@ -25,28 +25,28 @@ nums = [1, 2, 2], n = 5
 Return 0.
 """
 class Solution(object):
-    def minPatches(self, nums, n):
-        """
-        :type nums: List[int]
-        :type n: int
-        :rtype: int
-        """
-        count = 0
-        cache = set()
-        for num in nums:
-        	self._cache_add(cache, num)
-        for i in xrange(1,n+1):
-        	if i not in cache:
-        		self._cache_add(cache, i)
-        		count += 1
-        return count
+	def minPatches(self, nums, n):
+		"""
+		:type nums: List[int]
+		:type n: int
+		:rtype: int
+		"""
+		count = 0
+		cache = set()
+		for num in nums:
+			self._cache_add(cache, num)
+		for i in xrange(1,n+1):
+			if i not in cache:
+				self._cache_add(cache, i)
+				count += 1
+		return count
 
 
-    def _cache_add(self, cache, num):
-    	temp = [c for c in cache]
-    	for c in temp:
-    		cache[c+num] = True
-    	cache.add(num)
+	def _cache_add(self, cache, num):
+		temp = [c for c in cache]
+		for c in temp:
+			cache[c+num] = True
+		cache.add(num)
 
     # time limit exceeed
     # [1,2,31,33],2147483647

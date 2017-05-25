@@ -26,8 +26,8 @@ class Solution(object):
         nums = set(nums)
         res = []
         for i in xrange(1,lens+1):
-        	if i not in nums:
-        		res.append(i)
+            if i not in nums:
+                res.append(i)
         return res
 
     def findDisappearedNumbers(self, nums):
@@ -36,8 +36,8 @@ class Solution(object):
         :rtype: List[int]
         """
         for i in xrange(len(nums)):
-        	if nums[abs(nums[i])-1] > 0:
-        		nums[abs(nums[i])-1] = -nums[abs(nums[i])-1]
+            if nums[abs(nums[i])-1] > 0:
+                nums[abs(nums[i])-1] = -nums[abs(nums[i])-1]
 
         return [ i+1 for i in xrange(len(nums)) if nums[i] > 0]
 

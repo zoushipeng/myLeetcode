@@ -18,14 +18,14 @@ class Solution(object):
         """
         high = len(nums) - 1
         for i in reversed(range(len(nums))):
-        	if nums[i] == 0:
-        		temp = i
-        		while high > temp:
-        			nums[temp] = nums[temp+1]
-        			temp += 1
+            if nums[i] == 0:
+                temp = i
+                while high > temp:
+                    nums[temp] = nums[temp+1]
+                    temp += 1
 
-        		nums[high] = 0
-        		high -= 1
+                nums[high] = 0
+                high -= 1
         print nums
 
     def moveZeroes(self, nums):
